@@ -123,3 +123,8 @@ export PS1;
 
 PS2="\\[${yellow}\\]→ \\[${reset}\\]";
 export PS2;
+
+## TMUX 
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+	    tmux attach -t foo || tmux new -s foo 
+fi
