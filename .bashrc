@@ -124,6 +124,68 @@ export PS1;
 PS2="\\[${yellow}\\]→ \\[${reset}\\]";
 export PS2;
 
+####
+###########################################################
+# GRC lets you execute commond commands with a lovely output
+# full of colors that will make your life easier
+###########################################################
+GRC="$(which grc)"
+if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
+alias colourify="$GRC -es --colour=auto"
+alias blkid='colourify blkid'
+alias configure='colourify ./configure'
+alias df='colourify df'
+alias diff='colourify diff'
+alias docker='colourify docker'
+alias docker-machine='colourify docker-machine'
+alias du='colourify du'
+alias env='colourify env'
+alias free='colourify free'
+alias fdisk='colourify fdisk'
+alias findmnt='colourify findmnt'
+alias make='colourify make'
+alias gcc='colourify gcc'
+alias g++='colourify g++'
+alias id='colourify id'
+alias ip='colourify ip'
+alias iptables='colourify iptables'
+alias as='colourify as'
+alias gas='colourify gas'
+alias ld='colourify ld'
+alias ls='colourify ls'
+alias lsof='colourify lsof'
+alias lsblk='colourify lsblk'
+alias lspci='colourify lspci'
+alias netstat='colourify netstat'
+alias ping='colourify ping'
+alias traceroute='colourify traceroute'
+alias traceroute6='colourify traceroute6'
+alias head='colourify head'
+alias tail='colourify tail'
+alias dig='colourify dig'
+alias mount='colourify mount'
+alias ps='colourify ps'
+alias mtr='colourify mtr'
+alias semanage='colourify semanage'
+alias getsebool='colourify getsebool'
+alias ifconfig='colourify ifconfig'
+fi
+
+# Color of your promt CLI
+#PS1="\[\033[01;31m\]\u@\h\[\033[01;34m\] \w $\[\033[00m\]"
+
+#export LANG=en_US.UTF-8
+#export LANGUAGE=en_US.UTF-8
+#export LC_COLLATE=C
+#export LC_CTYPE=en_US.UTF-8
+
+####################
+#Other alias section
+###################
+alias cat='lolcat'
+
+#### END TEST
+
 ## TMUX 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 	    tmux attach -t foo || tmux new -s foo 
